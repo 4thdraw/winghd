@@ -27,23 +27,28 @@
     justify-content: space-between !important;
     align-items: center !important;
 }
+a{
+    text-decoration: none;
+    color:black;
+}
 
 // 커스터마이징
 #hd{
+  padding: 0 3rem;
    
     .gnb{
         // ul 네비게이션
         &:hover{ /////////////// 여기서부터
           
             &:before{
-                height:180px;
+                    height:calc(13rem + 20px );
             }
             .gnb_li{
                 .gnb_a{
     
                 }
                 .gnb_ul{
-    
+                    height:calc(13rem + 20px );
                 }
             }
         } //////////////// 여기까지가 gnb에 hover했을때의 스타일상태임
@@ -61,12 +66,23 @@
         }
         .gnb_li{
             // 대메뉴 li
+            padding: 0 1rem;  
+            font-size: 1.3rem;
+            line-height: 2;          
             .gnb_a{
                 // 대메뉴 a
-
+                font-size: 2rem;
+                line-height: 100px; //상단의 height가 가장 큰 객체의 높이를 넣어준다.
+                display: block; // inline태그
             }
             .gnb_ul{
                 // 소메뉴 포지션이 abs임
+                top:100%;
+                left:0;
+                min-width:120px;
+                height: 0;
+                overflow: hidden;
+                transition: 0.5s;
 
             }
         }
